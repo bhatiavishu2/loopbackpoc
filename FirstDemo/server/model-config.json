@@ -33,7 +33,8 @@
     "public": false
   },
   "CoffeeShop": {
-    "dataSource": "db",
+    "dataSource": "mysqIDs",
     "public": true
   }
+  
 }

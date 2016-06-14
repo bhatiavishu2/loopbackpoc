@@ -4,13 +4,13 @@
     "connector": "memory"
   },
   "mysqIDs": {
-    "host": "",
-    "port": 0,
+    "host": "localhost",
+    "port": 3306,
     "url": "",
-    "database": "",
-    "password": "",
+    "database": "getting_started",
+    "password": "root",
     "name": "mysqIDs",
-    "user": "",
+    "user": "root",
     "connector": "mysql"
   }
 }
