@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mysqIDs": {
+    "host": "",
+    "port": 0,
+    "url": "",
+    "database": "",
+    "password": "",
+    "name": "mysqIDs",
+    "user": "",
+    "connector": "mysql"
+  }
+}
