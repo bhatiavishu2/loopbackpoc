@@ -1,6 +1,9 @@
+var app = require('../server');
 module.exports = function(app) {
-  app.dataSources.mysqlDs.automigrate('CoffeeShop', function(err) {
-    if (err) throw err;
+
+ var da = app.dataSources.mysqIDs;
+  da.automigrate('CoffeeShop', function(err) {
+     if (err) throw err;
  
     app.models.CoffeeShop.create([
       {name: 'Bel Cafe', city: 'Vancouver'},
