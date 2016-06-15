@@ -1,3 +1,4 @@
+//U-implementing auto-migration to create table in database from code
 var app = require('../server');
 module.exports = function(app) {
 

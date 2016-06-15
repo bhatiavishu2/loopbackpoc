@@ -11,6 +11,7 @@
     "password": "root",
     "name": "mysqIDs",
     "user": "root",
-    "connector": "mysql"
+    "connector": "mysql",
+    "work":"U-Add datasource to connect to database"
   }
 }

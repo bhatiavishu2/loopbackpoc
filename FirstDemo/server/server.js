@@ -3,6 +3,11 @@ var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
 
+//U-express route add
+app.use('/express-status', function(req, res, next) {
+  res.json({ running: true });
+});
+
 app.start = function() {
   // start the web server
   return app.listen(function() {

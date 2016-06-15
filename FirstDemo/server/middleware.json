@@ -40,7 +40,10 @@
       ]
     }
   },
-  "files": {},
+  "files": {"loopback#static": {
+    "name": "//U- adding file to add static content giving path of static directory $! meaning relative path to middleware",
+      "params": "$!../client"
+    }},
   "final": {
     "loopback#urlNotFound": {}
   },

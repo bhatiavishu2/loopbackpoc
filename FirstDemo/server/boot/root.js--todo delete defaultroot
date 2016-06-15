@@ -1,3 +1,4 @@
+//U-ignoring default root by changing extension
 module.exports = function(server) {
   // Install a `/` route that returns server status
   var router = server.loopback.Router();
