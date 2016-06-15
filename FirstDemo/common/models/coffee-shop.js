@@ -1,3 +1,4 @@
+// U- implementing custom remote methods
 module.exports = function(CoffeeShop) {
 CoffeeShop.status = function (cb) {
     var currentDate = new Date();
