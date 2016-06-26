@@ -33,6 +33,9 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "ExternalLogin": {
+    "dataSource": "db",
+    "public": true
   }
-  
 }

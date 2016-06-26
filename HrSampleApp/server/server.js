@@ -67,22 +67,26 @@ for (var s in config) {
 }
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 
-
+// app.use( function(req, res, next) {
+//   console.log(req);
+//   next()
+// });
 app.get('/auth/account', ensureLoggedIn('/login'), function(req, res, next) {
-  res.write( {
+  res.json(req.accessToken),
+   res.write({
+    
     user: req.user,
-    url: req.url,
-  });
-  res.rnd()
-});
-
-app.get('/local', function(req, res, next) {
-  res.write( {
-    user: req.user,
-    url: req.url,
+    token: req.token
   });
   res.end()
 });
+app.get('/auth/failure', function(req, res, next) {
+
+ res.send(JSON.stringify({ failed: 'failed to login' }));
+  res.end();
+});
+
+
 
 app.start = function() {
   // start the web server

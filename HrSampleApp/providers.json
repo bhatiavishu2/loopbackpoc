@@ -31,8 +31,8 @@
     "callbackURL": "http://localhost:3000/auth/google/callback",
     "authPath": "/auth/google",
     "callbackPath": "/auth/google/callback",
-    "successRedirect": "/auth/account",
-    "failureRedirect": "/login",
+    "successRedirect": "http://localhost:3000/api/ExternalLogins/getToken?token=/:accessToken/",
+    "failureRedirect": "/auth/failure",
     "scope": ["email", "profile"],
     "failureFlash": true
   },
@@ -72,10 +72,49 @@
     "callbackURL": "http://localhost:3000/link/google/callback",
     "authPath": "/link/google",
     "callbackPath": "/link/google/callback",
-    "successRedirect": "/auth/account",
+    "successRedirect": "/ExternalLogins/status",
     "failureRedirect": "/login",
     "scope": ["email", "profile"],
     "link": true,
     "failureFlash": true
+  },
+  "myldap": {
+  "provider": "ldap",
+  "authScheme":"ldap",
+  "module": "passport-ldapauth",
+  "authPath": "/auth/ldap",
+  "successRedirect": "/auth/account",
+  "failureRedirect": "/ldap",
+  "session": true,
+  "LdapAttributeForLogin": "uid",
+  "LdapAttributeForUsername": "uid",
+  "LdapAttributeForMail": "mail",
+  "server":{
+    "url": "ldap://ldap.example.org:389/dc=example,dc=org",
+    "searchBase": "ou=people,dc=example,dc=org",
+    "searchAttributes": ["cn", "mail", "uid", "givenname"],
+    "searchFilter": "(uid={{username}})"
   }
 }
+,
+"ms-ad": {
+    "provider": "ms-ad",
+    "authScheme":"ldap",
+    "module": "passport-ldapauth",
+    "authPath": "/auth/msad",
+    "successRedirect": "/auth/account",
+    "failureRedirect": "/msad",
+    "failureFlash": true,
+    "session": true,
+    "LdapAttributeForLogin": "mail",
+    "LdapAttributeForUsername": "mail",
+    "LdapAttributeForMail": "mail",
+    "server":{
+      "url": "ldap://ldap.example.org:389/dc=example,dc=org",
+      "bindDn": "bindUsername",
+      "bindCredentials": "bindPassword",
+      "searchBase": "ou=people,dc=example,dc=org",
+      "searchAttributes": ["cn", "mail", "uid", "givenname"],
+      "searchFilter": "(&(objectcategory=person)(objectclass=user)(|(samaccountname={{username}})(mail={{username}})))"
+    }
+  }}
