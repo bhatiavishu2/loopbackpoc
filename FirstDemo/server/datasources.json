@@ -1,0 +1,27 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mysqIDs": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "getting_started",
+    "password": "root",
+    "name": "mysqIDs",
+    "user": "root",
+    "connector": "mysql",
+    "work": "U-Add datasource to connect to database"
+  },
+  "mongoDs": {
+    "host": "demo.strongloop.com",
+    "port": 27017,
+    "database": "getting_started_intermediate",
+    "username": "demo",
+    "password": "L00pBack",
+    "name": "mongoDs",
+    "connector": "mongodb",
+    "work": "U-Add datasource to connect to database"
+  }
+}
